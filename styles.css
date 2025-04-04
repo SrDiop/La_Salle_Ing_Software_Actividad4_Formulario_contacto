@@ -1,69 +1,66 @@
-/* Estilos generales */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    margin: 0;
-    padding: 0;
+    background-color: #0D47A1;
+    color: #fff;
+    text-align: center;
 }
 
-/* Contenedor del formulario */
 .container {
     width: 50%;
-    margin: 50px auto;
-    background: white;
+    margin: auto;
+    background: #1565C0;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilo del título */
 h2 {
-    text-align: center;
-    color: #005BAC; /* Color azul de La Salle */
+    color: #FFEB3B;
 }
 
-/* Estilos de los campos */
-label {
-    display: block;
-    margin-top: 10px;
-    font-weight: bold;
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 input, textarea {
-    width: 100%;
     padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
     border-radius: 5px;
+    border: none;
 }
 
-/* Botón */
 button {
-    width: 100%;
+    background: #FFEB3B;
+    color: #0D47A1;
     padding: 10px;
-    margin-top: 20px;
-    background-color: #005BAC; /* Azul La Salle */
-    color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
-button:hover {
-    background-color: #003366; /* Azul más oscuro */
+.ver-datos {
+    margin-top: 10px;
 }
 
-/* Enlace */
-p a {
-    display: block;
-    text-align: center;
+table {
+    width: 100%;
     margin-top: 20px;
-    color: #005BAC;
-    text-decoration: none;
-    font-weight: bold;
+    background: white;
+    color: black;
+    border-collapse: collapse;
 }
 
-p a:hover {
-    text-decoration: underline;
+th, td {
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+th {
+    background: #1565C0;
+    color: white;
+}
+
+a button {
+    margin-top: 20px;
 }
