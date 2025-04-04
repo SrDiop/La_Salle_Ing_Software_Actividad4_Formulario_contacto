@@ -1,12 +1,20 @@
 <?php
-$conexion = new mysqli("localhost", "root", "", "formulario_db");
+$servername = "localhost";
+$username = "root";
+$password = "";
+$database = "formularios_db";
 
-if ($conexion->connect_error) {
-    die("Error de conexión: " . $conexion->connect_error);
+// Conectar a la base de datos
+$conn = new mysqli($servername, $username, $password, $database);
+
+// Verificar conexión
+if ($conn->connect_error) {
+    die("Error de conexión: " . $conn->connect_error);
 }
-// 
-$sql = "SELECT id, nombre, correo, telefono, asunto, fecha, mensaje FROM contactos";
-$resultado = $conexion->query($sql);
+
+// Obtener datos
+$sql = "SELECT id, nombre, correo, telefono, asunto, mensaje FROM contacto";
+$result = $conn->query($sql);
 ?>
 
 <!DOCTYPE html>
@@ -14,45 +22,43 @@ $resultado = $conexion->query($sql);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Datos del Formulario</title>
+    <title>Ver Datos</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h2>Datos Recibidos</h2>
-        <table border="1">
+        <h2>Datos Registrados</h2>
+        <table>
             <tr>
                 <th>ID</th>
                 <th>Nombre</th>
                 <th>Correo</th>
                 <th>Teléfono</th>
                 <th>Asunto</th>
-                <th>Fecha</th>
                 <th>Mensaje</th>
             </tr>
             <?php
-            if ($resultado->num_rows > 0) {
-                while ($fila = $resultado->fetch_assoc()) {
-                    echo "<tr>";
-                    echo "<td>" . $fila["id"] . "</td>";
-                    echo "<td>" . $fila["nombre"] . "</td>";
-                    echo "<td>" . $fila["correo"] . "</td>";
-                    echo "<td>" . $fila["telefono"] . "</td>";
-                    echo "<td>" . $fila["asunto"] . "</td>";
-                    echo "<td>" . $fila["fecha"] . "</td>";
-                    echo "<td>" . $fila["mensaje"] . "</td>";
-                    echo "</tr>";
+            if ($result->num_rows > 0) {
+                while($row = $result->fetch_assoc()) {
+                    echo "<tr>
+                            <td>".$row["id"]."</td>
+                            <td>".$row["nombre"]."</td>
+                            <td>".$row["correo"]."</td>
+                            <td>".$row["telefono"]."</td>
+                            <td>".$row["asunto"]."</td>
+                            <td>".$row["mensaje"]."</td>
+                          </tr>";
                 }
             } else {
-                echo "<tr><td colspan='7'>No hay datos registrados</td></tr>";
+                echo "<tr><td colspan='6'>No hay datos registrados</td></tr>";
             }
             ?>
         </table>
-        <p><a href="index.html">Volver al formulario</a></p>
+        <a href="index.html"><button>Volver</button></a>
     </div>
 </body>
 </html>
 
 <?php
-$conexion->close();
+$conn->close();
 ?>
