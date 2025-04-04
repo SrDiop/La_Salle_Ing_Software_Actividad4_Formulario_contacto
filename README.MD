@@ -61,9 +61,9 @@ Este proyecto fue desarrollado de manera **individual** por **Diego Rojas Gonzá
 - Se creó y configuró un repositorio en GitHub.
 - Se configuró Git en el entorno local con nombre de usuario y correo electrónico.
 - Se inicializó un repositorio local y se enlazó correctamente con GitHub.
-- Se subió el código fuente de la actividad 4 (Formulario de contacto U La Salle).
+- Se subió el código fuente de la actividad 5 (Formulario de contacto U La Salle).
 - Se realizaron múltiples cambios al código y se documentaron con commits descriptivos.
 - Se realizaron pruebas y validaciones para asegurar el correcto funcionamiento de la aplicación.
 - Se mantuvo una estructura organizada y profesional, tanto en el código como en el diseño visual.
 
-> ⚠️ **Nota:** Aunque la actividad sugiere trabajo en equipo, en este caso el proyecto fue desarrollado de forma individual debido a que no fue posible conformar un equipo de trabajo. GitHub muestra un único colaborador porque **todo el desarrollo, configuración y documentación fue realizado por una sola persona.**
+> ⚠️ **Nota:** Aunque la actividad sugiere trabajo en equipo, en este caso el proyecto fue desarrollado de forma individual debido a que no fue posible conformar un equipo de trabajo. GitHub muestra un único colaborador porque **todo el desarrollo, configuración y documentación fue realizado por una sola persona :D.**
