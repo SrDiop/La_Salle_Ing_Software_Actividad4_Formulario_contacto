@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario de Contacto</title>
+    <title>Formulario de Contacto - U La Salle</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h2>Formulario de Contacto</h2>
+        <h2>Contacto - Universidad La Salle</h2>
         <form action="procesar_formulario.php" method="POST">
             <label for="nombre">Nombre Completo:</label>
             <input type="text" id="nombre" name="nombre" required>
@@ -22,16 +22,13 @@
             <label for="asunto">Asunto:</label>
             <input type="text" id="asunto" name="asunto" required>
 
-            <label for="fecha">Fecha de Contacto:</label>
-            <input type="date" id="fecha" name="fecha" required>
-
             <label for="mensaje">Mensaje:</label>
-            <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+            <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
 
             <button type="submit">Enviar</button>
         </form>
 
-        <p><a href="ver_datos.php">Ver datos ingresados</a></p>
+        <a href="ver_datos.php"><button class="ver-datos">Ver Datos Registrados</button></a>
     </div>
 </body>
 </html>
