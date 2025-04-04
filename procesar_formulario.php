@@ -1,38 +1,36 @@
-<<?php
+<?php
 $servername = "localhost";
 $username = "root";
 $password = "";
 $database = "formularios_db";
 
-// Conectar a la base de datos
+// Crear conexión
 $conn = new mysqli($servername, $username, $password, $database);
 
 // Verificar conexión
 if ($conn->connect_error) {
-    die("Error de conexión: " . $conn->connect_error);
+    die("Conexión fallida: " . $conn->connect_error);
 }
 
-// Validar datos recibidos
-if (empty($_POST["nombre"]) || empty($_POST["correo"]) || empty($_POST["mensaje"])) {
-    die("Error: Todos los campos son obligatorios.");
-}
+// Verificar si se recibió una solicitud POST
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $nombre = $_POST["nombre"];
+    $correo = $_POST["correo"];
+    $telefono = $_POST["telefono"];
+    $asunto = $_POST["asunto"];
+    $mensaje = $_POST["mensaje"];
 
-// Sanitizar entrada
-$nombre = $conn->real_escape_string($_POST["nombre"]);
-$correo = $conn->real_escape_string($_POST["correo"]);
-$telefono = $conn->real_escape_string($_POST["telefono"]);
-$asunto = $conn->real_escape_string($_POST["asunto"]);
-$mensaje = $conn->real_escape_string($_POST["mensaje"]);
+    $sql = "INSERT INTO contactos (nombre, correo, telefono, asunto, mensaje, fecha) 
+            VALUES ('$nombre', '$correo', '$telefono', '$asunto', '$mensaje', NOW())";
 
-// Insertar datos en la base
-$sql = "INSERT INTO contacto (nombre, correo, telefono, asunto, mensaje) VALUES ('$nombre', '$correo', '$telefono', '$asunto', '$mensaje')";
-
-if ($conn->query($sql) === TRUE) {
-    echo "<p>✅ Datos guardados correctamente. <a href='index.html'>Volver</a></p>";
+    if ($conn->query($sql) === TRUE) {
+        echo "Datos guardados correctamente. <a href='index.html'>Volver</a>";
+    } else {
+        echo "Error al guardar los datos: " . $conn->error;
+    }
 } else {
-    echo "❌ Error: " . $conn->error;
+    echo "Acceso no permitido.";
 }
 
-// Cerrar conexión
 $conn->close();
 ?>

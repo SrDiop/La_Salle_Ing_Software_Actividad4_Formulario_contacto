@@ -3,32 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario de Contacto - U La Salle</title>
+    <title>Formulario de Contacto</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h2>Contacto - Universidad La Salle</h2>
-        <form action="procesar_formulario.php" method="POST">
-            <label for="nombre">Nombre Completo:</label>
-            <input type="text" id="nombre" name="nombre" required>
+    <h2>Formulario de Contacto</h2>
+    <form action="procesar_formulario.php" method="POST">
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" required><br>
 
-            <label for="correo">Correo Electrónico:</label>
-            <input type="email" id="correo" name="correo" required>
+        <label for="correo">Correo:</label>
+        <input type="email" name="correo" required><br>
 
-            <label for="telefono">Teléfono:</label>
-            <input type="tel" id="telefono" name="telefono" required>
+        <label for="telefono">Teléfono:</label>
+        <input type="text" name="telefono" required><br>
 
-            <label for="asunto">Asunto:</label>
-            <input type="text" id="asunto" name="asunto" required>
+        <label for="asunto">Asunto:</label>
+        <input type="text" name="asunto" required><br>
 
-            <label for="mensaje">Mensaje:</label>
-            <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+        <label for="mensaje">Mensaje:</label>
+        <textarea name="mensaje" required></textarea><br>
 
-            <button type="submit">Enviar</button>
-        </form>
+        <button type="submit">Enviar</button>
+    </form>
 
-        <a href="ver_datos.php"><button class="ver-datos">Ver Datos Registrados</button></a>
-    </div>
+    <a href="ver_datos.php">Ver datos registrados</a>
 </body>
 </html>
